@@ -1,0 +1,44 @@
+import { csCZ } from '@mui/material/locale';
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme(
+  {
+    cssVariables: true,
+    palette: {
+      primary: {
+        main: '#262a32',
+      },
+      secondary: {
+        main: '#737c90',
+      },
+    },
+    shape: {
+      borderRadius: 4,
+    },
+    typography: {
+      h1: {
+        fontSize: '2.5rem',
+        fontWeight: 500,
+      },
+      h2: {
+        fontSize: '2rem',
+        fontWeight: 500,
+      },
+      h3: {
+        fontSize: '1.5rem',
+        fontWeight: 500,
+      },
+    },
+  },
+  csCZ,
+);
+
+// theme = createTheme(theme, {
+//   palette: {
+//     info: {
+//       main: theme.palette.secondary.main,
+//     },
+//   },
+// });
+
+export default theme;
