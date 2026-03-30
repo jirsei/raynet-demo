@@ -11,6 +11,9 @@ const theme = createTheme(
       secondary: {
         main: '#737c90',
       },
+      background: {
+        default: '#f4f6f8',
+      },
     },
     shape: {
       borderRadius: 4,
@@ -27,6 +30,18 @@ const theme = createTheme(
       h3: {
         fontSize: '1.5rem',
         fontWeight: 500,
+      },
+    },
+    components: {
+      MuiButtonBase: {
+        defaultProps: {
+          disableRipple: true,
+        },
+      },
+      MuiToolbar: {
+        defaultProps: {
+          variant: 'dense',
+        },
       },
     },
   },
