@@ -67,7 +67,7 @@ export default function LeftMenu({ width, pages }: { width: number; pages: MenuP
           cursor: 'text',
         }}
       >
-        <Search sx={{ color: '#b8e7fa' }} />
+        <Search sx={{ color: '#b8e7fa', fontSize: '20px' }} />
       </Box>
       <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
         <List

@@ -1,11 +1,11 @@
 import './App.css';
 
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import LeftMenu from './components/leftMenu';
 import HeaderBar from './components/headerBar';
 import Klienti from './pages/klienti';
+import type { MenuPageList } from './types/menuPageList';
 
 const leftMenuWidth = 180; //TODO 80 collapsed
 const menuPages: MenuPageList = [
@@ -21,7 +21,7 @@ const menuPages: MenuPageList = [
 
 function App() {
   return (
-    <Container className="app-container d-flex flex-column min-vh-100">
+    <Box className="app-container d-flex flex-column min-vh-100">
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <HeaderBar menuWidth={leftMenuWidth} />
@@ -29,7 +29,7 @@ function App() {
         {/* TODO insert page dynamically using react-router */}
         <Klienti />
       </Box>
-    </Container>
+    </Box>
   );
 }
 

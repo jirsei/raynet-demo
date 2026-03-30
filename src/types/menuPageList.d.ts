@@ -1,8 +1,8 @@
-// Type definition for left menu categories
-interface MenuPage {
+// Type definition for left menu pages
+export interface MenuPage {
   name: string;
   icon: string;
   url: string;
 }
 
-type MenuPageList = MenuPage[];
+export type MenuPageList = MenuPage[];
