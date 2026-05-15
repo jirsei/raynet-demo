@@ -6,14 +6,14 @@ import InputBase from '@mui/material/InputBase';
 import Typography from '@mui/material/Typography';
 import { type FocusEvent } from 'react';
 
-type SearchBarProps = {
+interface SearchBarProps {
   value: string;
   onChange: (value: string) => void;
   onBlur?: () => void;
   onClear?: () => void;
   placeholder?: string;
   ariaLabel?: string;
-};
+}
 
 export default function SearchBar({
   value,
@@ -53,7 +53,9 @@ export default function SearchBar({
       <InputBase
         placeholder={placeholder}
         value={value}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={(event) => {
+          onChange(event.target.value);
+        }}
         sx={{
           flex: 1,
           '& input': {

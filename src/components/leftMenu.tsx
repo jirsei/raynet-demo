@@ -17,6 +17,7 @@ import SignalCellularAltOutlined from '@mui/icons-material/SignalCellularAltOutl
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Search from '@mui/icons-material/Search';
+import type { MenuPageList } from '@/types/menuPageList';
 
 export default function LeftMenu({ width, pages }: { width: number; pages: MenuPageList }) {
   const iconMap = {

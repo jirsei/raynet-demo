@@ -14,7 +14,7 @@ export default function Klienti() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCompany, setSelectedCompany] = useState<Client | null>(null);
 
-  const displayedCompany = selectedCompany || (companies.length > 0 ? companies[0] : null);
+  const displayedCompany = selectedCompany ?? (companies.length > 0 ? companies[0] : null);
 
   const handleSearchBlur = () => {
     void refetchCompanies(searchQuery);

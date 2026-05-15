@@ -20,7 +20,7 @@ const columns = [
   { key: 'category', label: 'KATEGORIE', width: 180 },
 ] as const;
 
-const gridTemplateColumns = columns.map((column) => `${column.width}px`).join(' ');
+const gridTemplateColumns = columns.map((column) => `${String(column.width)}px`).join(' ');
 const gridMinWidth = columns.reduce((sum, column) => sum + column.width, 0) + 136;
 
 const getDisplayName = (company: Client) => {
@@ -42,11 +42,11 @@ const getDisplayName = (company: Client) => {
 };
 
 const getDisplayCity = (company: Client) => {
-  return company.primaryAddress?.address?.city || company.contactAddress?.address?.city || '-';
+  return company.primaryAddress?.address.city ?? company.contactAddress?.address.city ?? '-';
 };
 
 const getValueOrFallback = (value: string | null | undefined) => {
-  return value && value.trim() ? value : '-';
+  return value?.trim() ? value : '-';
 };
 
 const cellTextSx = {
@@ -139,7 +139,7 @@ export default function CompanyList({ companies, onSelectCompany }: CompanyListP
               sx={{ fontSize: 16, color: 'text.secondary', flexShrink: 0 }}
             />
             <Typography variant="body2" sx={{ ...cellTextSx, flex: 1 }}>
-              {getValueOrFallback(company.owner?.fullName)}
+              {getValueOrFallback(company.owner.fullName)}
             </Typography>
           </Box>
           <Typography variant="body2" sx={cellTextSx}>
@@ -149,7 +149,7 @@ export default function CompanyList({ companies, onSelectCompany }: CompanyListP
             {getDisplayCity(company)}
           </Typography>
           <Typography variant="body2" sx={cellTextSx}>
-            {getValueOrFallback(company.category?.value)}
+            {getValueOrFallback(company.category.value)}
           </Typography>
         </Box>
       ))}

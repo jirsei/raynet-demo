@@ -84,8 +84,8 @@ export default interface Client {
   bankAccount: string | null;
   databox: string | null;
   court: string | null;
-  primaryAddress: AddressWrapper;
-  contactAddress: AddressWrapper;
+  primaryAddress: AddressWrapper | null;
+  contactAddress: AddressWrapper | null;
   category: IdValuePair;
   turnover: IdValuePair;
   economyActivity: IdValuePair;

@@ -10,7 +10,7 @@ interface CompanyDetailProps {
 }
 
 const getValueOrFallback = (value: string | null | undefined) => {
-  return value && value.trim() ? value : '-';
+  return value?.trim() ? value : '-';
 };
 
 const getDisplayName = (company: Client) => {
@@ -36,7 +36,7 @@ const getAddress = (company: Client) => {
   if (!address) return '-';
 
   const parts = [address.street, address.zipCode, address.city].filter((part): part is string =>
-    Boolean(part?.trim()),
+    Boolean(part.trim()),
   );
 
   return parts.length ? parts.join(', ') : '-';
@@ -51,7 +51,7 @@ const getMapLink = (company: Client) => {
     return null;
   }
 
-  return `https://www.google.com/maps?q=${lat},${lng}`;
+  return `https://www.google.com/maps?q=${String(lat)},${String(lng)}`;
 };
 
 const getAvatarLabel = (company: Client) => {
@@ -59,14 +59,13 @@ const getAvatarLabel = (company: Client) => {
     ? [company.firstName, company.lastName].filter(Boolean).join(' ')
     : company.name;
 
-  const initials =
-    source
-      ?.split(' ')
-      .filter(Boolean)
-      .slice(0, 2)
-      .map((word) => word[0])
-      .join('')
-      .toUpperCase() ?? '';
+  const initials = source
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase();
 
   return initials || '?';
 };
@@ -89,7 +88,7 @@ export default function CompanyDetail({ company }: CompanyDetailProps) {
             variant="caption"
             sx={{ color: 'text.secondary', textTransform: 'uppercase' }}
           >
-            {getValueOrFallback(company.category?.value)}
+            {getValueOrFallback(company.category.value)}
           </Typography>
           <Typography
             variant="caption"
@@ -136,7 +135,7 @@ export default function CompanyDetail({ company }: CompanyDetailProps) {
         </Box>
 
         <Typography variant="body2">
-          Vlastník: {getValueOrFallback(company.owner?.fullName)}
+          Vlastník: {getValueOrFallback(company.owner.fullName)}
         </Typography>
       </Stack>
     </Box>
