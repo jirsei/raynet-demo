@@ -144,7 +144,6 @@ export default function LeftMenu({ width, pages }: { width: number; pages: MenuP
           </ListItemButton>
         </Box>
       </Box>
-      {/* TODO toggle button (and hook) */}
     </Drawer>
   );
 }

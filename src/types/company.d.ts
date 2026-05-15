@@ -86,7 +86,7 @@ export default interface Client {
   court: string | null;
   primaryAddress: AddressWrapper | null;
   contactAddress: AddressWrapper | null;
-  category: IdValuePair;
+  category: IdValuePair | null;
   turnover: IdValuePair;
   economyActivity: IdValuePair;
   companyClassification1: IdValuePair;

@@ -2,6 +2,11 @@
 
 ## How to run
 
+**API key**
+
+- copy key from tmptxt to .env as VITE_API_KEY
+  _(Valid until 15.6.)_
+
 **Prerequisites**
 
 - Node.js (created with v24.13.0)

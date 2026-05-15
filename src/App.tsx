@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import LeftMenu from './components/leftMenu';
 import HeaderBar from './components/headerBar';
-import Klienti from './pages/klienti';
+import Klienti from './pages/clients';
 import type { MenuPageList } from './types/menuPageList';
 
-const leftMenuWidth = 180; //TODO 80 collapsed
+const leftMenuWidth = 180;
 const menuPages: MenuPageList = [
   { name: 'Nástěnka', icon: 'CloudOutlined', url: '/nastenka' },
   { name: 'Pošta', icon: 'AlternateEmailOutlined', url: '/posta' },
@@ -26,7 +26,6 @@ function App() {
         <CssBaseline />
         <HeaderBar menuWidth={leftMenuWidth} />
         <LeftMenu width={leftMenuWidth} pages={menuPages} />
-        {/* TODO insert page dynamically using react-router */}
         <Klienti />
       </Box>
     </Box>

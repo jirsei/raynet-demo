@@ -35,8 +35,8 @@ const getAddress = (company: Client) => {
   const address = company.primaryAddress?.address ?? company.contactAddress?.address;
   if (!address) return '-';
 
-  const parts = [address.street, address.zipCode, address.city].filter((part): part is string =>
-    Boolean(part.trim()),
+  const parts = [address.street, address.zipCode, address.city].filter(
+    (part: string | null): part is string => Boolean(part?.trim()),
   );
 
   return parts.length ? parts.join(', ') : '-';
@@ -88,7 +88,7 @@ export default function CompanyDetail({ company }: CompanyDetailProps) {
             variant="caption"
             sx={{ color: 'text.secondary', textTransform: 'uppercase' }}
           >
-            {getValueOrFallback(company.category.value)}
+            {getValueOrFallback(company.category?.value)}
           </Typography>
           <Typography
             variant="caption"

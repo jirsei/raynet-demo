@@ -149,7 +149,7 @@ export default function CompanyList({ companies, onSelectCompany }: CompanyListP
             {getDisplayCity(company)}
           </Typography>
           <Typography variant="body2" sx={cellTextSx}>
-            {getValueOrFallback(company.category.value)}
+            {getValueOrFallback(company.category?.value)}
           </Typography>
         </Box>
       ))}
