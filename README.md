@@ -5,7 +5,7 @@
 **API key**
 
 - copy key from tmptxt to .env as VITE_API_KEY
-  _(Valid until 15.6.)_
+  _(Valid until 19.7.)_
 
 **Prerequisites**
 
